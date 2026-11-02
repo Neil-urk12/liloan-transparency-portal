@@ -14,6 +14,7 @@
 .small { font-size: 13px; }
 .strong { font-weight: 600; }
 .r { text-align: right; }
+.nowrap { white-space: nowrap; }
 
 /* ---------- "Create your own" strip (above the masthead) ---------- */
 .build-strip {
@@ -333,7 +334,7 @@
 .bar-v { font-family: var(--font-mono); font-size: 10px; color: var(--ink-2); text-align: center; white-space: nowrap; overflow: hidden; }
 .bar-track { position: relative; height: 92px; background: var(--paper-2); }
 .bar-fill { position: absolute; left: 0; right: 0; bottom: 0; min-height: 1px; }
-.bar-x { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); text-align: center; }
+.bar-x { font-family: var(--font-mono); font-size: 10px; color: var(--ink-3); text-align: center; white-space: nowrap; }
 .congresses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 4px; }
 .congresses span { border-top: 1px solid var(--rule); padding-top: 3px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); text-align: center; }
 .hcard .fine { margin-top: 8px; }
@@ -413,6 +414,12 @@ code { font-family: var(--font-mono); font-size: 0.9em; background: var(--paper-
   :root { --gutter: 18px; }
   .masthead-top-inner > span:first-child { display: none; }
   .masthead-links { justify-content: flex-start; gap: 14px; }
+  /* Bigger touch area, same layout. */
+  .masthead-links a, .footer-links a { padding-block: 8px; margin-block: -8px; }
+  /* All four sections stay visible: wrap instead of a hidden scroll. */
+  .subnav-inner { flex-wrap: wrap; gap: 0 20px; }
+  /* Under 16px, iOS Safari zooms the page on focus. */
+  .field input, .field select { font-size: 16px; }
   .masthead-name { font-size: 22px; }
   .masthead-with .label { display: none; }
   .masthead-with img { height: 20px; }
@@ -455,6 +462,13 @@ code { font-family: var(--font-mono); font-size: 0.9em; background: var(--paper-
 }
 
 @media (max-width: 560px) {
+  .build-strip-url { display: none; }
+  .ystrip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .yv { font-size: 16px; }
+  /* Room for nine bar labels at 320px. */
+  .hcard { padding-left: 10px; padding-right: 10px; }
+  .bars { gap: 2px; }
+  .bar-col.k-nep { margin-left: 4px; }
   .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .group-tile { border-right: 1px solid var(--rule) !important; }
   .group-tile:nth-child(2n) { border-right: none !important; }

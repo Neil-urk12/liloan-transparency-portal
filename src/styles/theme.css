@@ -50,6 +50,8 @@ html, body {
   font-feature-settings: "ss01", "cv11", "tnum";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Long URLs in API text (the footer notice) must not widen the page on phones. */
+  overflow-wrap: break-word;
 }
 
 #root { min-height: 100svh; display: flex; flex-direction: column; }
@@ -84,6 +86,7 @@ h1, h2, h3 {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 10px;
+  text-wrap: balance;
 }
 .eyebrow .sep { color: var(--ink-mute); padding: 0 6px; }
 .label {

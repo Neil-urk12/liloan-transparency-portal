@@ -148,6 +148,13 @@ function OfficeHistoryList({ list }: { list: Envelope<DistrictCard>[] }) {
 /** Three bars each: 2020–22, 2023–25, and 2026 with the two 2027 versions. */
 const CONGRESSES = [{ label: '18th Congress' }, { label: '19th Congress' }, { label: '20th Congress' }];
 
+/** Three significant figures (865M, 1.33B), so nine labels fit on a phone; the exact figure is in the title and aria-label. */
+function barValue(n: number): string {
+  // 999.5 thresholds: a value that rounds up to 1000 takes the next suffix (1B, not 1000M).
+  const [div, suffix] = n >= 999.5e6 ? [1e9, 'B'] : n >= 999.5e3 ? [1e6, 'M'] : n >= 999.5 ? [1e3, 'K'] : [1, ''];
+  return Number((n / div).toPrecision(3)) + suffix;
+}
+
 function OfficeHistory({ office }: { office: DistrictOffice }) {
   const years = office.years ?? [];
   const slot = (fy: number, stage: string) => years.find((y) => y.fy === fy && y.stage === stage);
@@ -166,7 +173,7 @@ function OfficeHistory({ office }: { office: DistrictOffice }) {
       <div className="bars" role="img" aria-label={`Budget by year: ${bars.map((b) => `${b.label} ${b.v?.php != null ? phpFull(b.v.php) : 'not found'}`).join('; ')}`}>
         {bars.map((b) => (
           <div key={b.key} className={`bar-col k-${b.kind}`} title={b.v?.php != null ? `${b.v.stage_label} ${b.key.slice(0, 4)}: ${phpFull(b.v.php)} (${b.v.scope})` : 'The office was not found that year'}>
-            <span className="bar-v num">{b.v?.php != null ? php(b.v.php).replace('₱', '') : '—'}</span>
+            <span className="bar-v num">{b.v?.php != null ? barValue(b.v.php) : '—'}</span>
             <span className="bar-track"><span className="bar-fill" style={{ height: `${((b.v?.php ?? 0) / max) * 100}%` }} /></span>
             <span className="bar-x">{b.label}</span>
           </div>

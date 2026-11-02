@@ -54,7 +54,7 @@ export function Masthead() {
           {config.logo && <img src={config.logo} alt="" className="masthead-logo" />}
           <span>
             <span className="masthead-kicker">
-              {KIND_LABELS[config.kind]} <span aria-hidden="true">·</span> Budgets 2020–2027
+              {KIND_LABELS[config.kind]} <span aria-hidden="true">·</span> <span className="nowrap">Budgets 2020–2027</span>
             </span>
             <span className="masthead-name">{config.name}</span>
           </span>
