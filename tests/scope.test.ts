@@ -19,6 +19,19 @@ test('the Santander namesake is excluded from Liloan totals and exports', async 
   assert.ok(!projectsCsv(result.projects).includes('Santander'));
 });
 
+test('a project found by office and by place counts once and keeps both reasons', async (t) => {
+  t.mock.method(globalThis, 'fetch', async (input: string) => {
+    const rows = new URL(input).pathname.includes('/dpwh/') ? [fixture.localProject] : [];
+    return Response.json({ meta: {}, disclaimers: [], data: { total: rows.length, rows } });
+  });
+  const overlap = { ...config, scope: { ...config.scope, offices: ['Cebu 5th District Engineering Office'] } };
+  const result = await resolveScope(createClient('https://api.example'), overlap);
+  assert.equal(result.queries.filter(q => q.dataset === 'dpwh').length, 2);
+  assert.deepEqual(result.projects.map(p => p.id), [fixture.localProject.id]);
+  assert.equal(summarise(result.projects).house.php, fixture.localProject.house_php);
+  assert.deepEqual(result.projects[0].reasons.map(r => r.kind).sort(), ['office', 'place']);
+});
+
 test('verified historical namesakes are excluded while local Liloan programs remain', async (t) => {
   t.mock.method(globalThis, 'fetch', async (input: string) => {
     const path = new URL(input).pathname;
