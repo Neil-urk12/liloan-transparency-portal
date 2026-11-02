@@ -37,7 +37,7 @@ export interface Client {
   json<T>(path: string, params?: Params): Promise<T>;
   get<T>(path: string, params?: Params): Promise<Envelope<T>>;
   overview(): Promise<Envelope<Overview>>;
-  /** Every row matching the filters, fetched page by page. */
+  /** Every row matching the filters, fetched page by page; rejects queries above the row limit. */
   allProjects(dataset: DatasetKey, filters: Params): Promise<{ list: Envelope<ProjectList>; rows: ProjectRow[]; truncated: boolean }>;
   project(dataset: DatasetKey, id: string): Promise<Envelope<ProjectDetail>>;
   district(id: string): Promise<Envelope<DistrictCard>>;
@@ -108,7 +108,13 @@ export function createClient(base: string): Client {
   async function allProjects(dataset: DatasetKey, filters: Params) {
     const path = `/datasets/${dataset}/projects`;
     const first = await get<ProjectList>(path, { ...filters, limit: PAGE_SIZE, offset: 0 });
-    const total = Math.min(first.data.total, MAX_ROWS_PER_QUERY);
+    const total = first.data.total;
+    if (total > MAX_ROWS_PER_QUERY) {
+      throw new Error(
+        `This search matches ${total.toLocaleString('en-US')} projects, exceeding the ${MAX_ROWS_PER_QUERY.toLocaleString('en-US')}-project limit. ` +
+        'Totals and downloads are unavailable. The portal operator needs to narrow its configured scope.',
+      );
+    }
     const offsets: number[] = [];
     for (let o = PAGE_SIZE; o < total; o += PAGE_SIZE) offsets.push(o);
     // A few pages at a time: kind to the API, quick enough for a few thousand rows.

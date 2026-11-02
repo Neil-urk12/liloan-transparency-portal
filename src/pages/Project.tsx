@@ -22,7 +22,12 @@ export default function Project() {
   const { client } = usePortal();
   const valid = (DATASET_KEYS as readonly string[]).includes(dataset);
   const [state, setState] = useState<{ key: string; value: Async<Envelope<ProjectDetail>> } | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const key = `${dataset}/${id}`;
+  const retry = () => {
+    setState(null);
+    setAttempt((n) => n + 1);
+  };
 
   useEffect(() => {
     if (!valid) return;
@@ -34,7 +39,7 @@ export default function Project() {
     return () => {
       live = false;
     };
-  }, [client, dataset, id, key, valid]);
+  }, [client, dataset, id, key, valid, attempt]);
 
   if (!valid) {
     return (
@@ -47,7 +52,7 @@ export default function Project() {
   return (
     <main className="page main">
       <p className="crumbs"><Link to="/">← Every project</Link></p>
-      <Await state={current} what="the project">
+      <Await state={current} what="the project" onRetry={retry}>
         {(env) => <ProjectView env={env} />}
       </Await>
     </main>

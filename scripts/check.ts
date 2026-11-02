@@ -8,10 +8,13 @@
  *   npm run check                                   portal.config.ts
  *   npm run check -- --config=examples/deo.config.ts
  *   npm run check -- --verbose                      list lines to review
+ *   npm run check -- --mode staging                 same mode as vite build --mode staging
  */
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { argv, cwd, env, exit } from 'node:process';
+import { argv, cwd, exit } from 'node:process';
+import { parseArgs } from 'node:util';
+import { loadEnv } from 'vite';
 import type { PortalConfig } from '../src/config.ts';
 import { createClient } from '../src/api/client.ts';
 import { configProblems, DEFAULT_API } from '../src/config.ts';
@@ -20,14 +23,23 @@ import { departmentShort, gaaYearTotals, resolveGaa } from '../src/lib/gaa.ts';
 import { GAA_YEARS, type GaaEnvelope } from '../src/api/types.ts';
 import { count, php, plural } from '../src/lib/format.ts';
 
-const verbose = argv.includes('--verbose');
+const { values: { verbose, mode, config: configFile } } = parseArgs({
+  args: argv.slice(2),
+  options: {
+    verbose: { type: 'boolean', default: false },
+    mode: { type: 'string', short: 'm', default: 'production' },
+    config: { type: 'string', default: 'portal.config.ts' },
+  },
+});
 // --config=examples/deo.config.ts checks another file; default portal.config.ts.
-const configPath = resolve(cwd(), argv.find((a) => a.startsWith('--config='))?.slice('--config='.length) ?? 'portal.config.ts');
+const configPath = resolve(cwd(), configFile);
 
 async function main() {
   const config = ((await import(pathToFileURL(configPath).href)) as { default: PortalConfig }).default;
   const problems = configProblems(config);
   const warnings: string[] = [];
+  // Match vite.config.ts, including .env.local, mode files and process precedence.
+  const env = loadEnv(mode, cwd(), 'VITE_');
   const api = createClient(env.VITE_API_BASE || config.api || DEFAULT_API);
   console.log(`${config.name} (${config.kind}) · API ${api.base}\n`);
 

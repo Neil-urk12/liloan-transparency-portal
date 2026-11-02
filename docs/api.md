@@ -17,8 +17,9 @@ Everything comes from the public, read-only, CORS-open BetterGov.ph Budget API
 | `…/programs?q=…&year=…&limit=1` | `npm run check` only: `meta.matched_amount`, the API's own total for the search in that year, to reconcile against |
 
 The 2027 project lists are paged at 200 rows; the client fetches every page (`allProjects` in
-`src/api/client.ts`), four at a time. A query that matches more than 4,000 rows is cut
-there and `npm run check` fails, since no single place should match that many.
+`src/api/client.ts`), four at a time. A query that matches more than 4,000 rows fails
+with an explicit limit error in the portal and in `npm run check`. Partial totals
+and CSV downloads are withheld until the configured scope is narrowed.
 
 Every response carries `meta` (with `notice`, the source commit and build date) and
 `disclaimers`. The portal prints both as they come.

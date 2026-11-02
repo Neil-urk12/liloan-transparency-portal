@@ -10,6 +10,7 @@ import { projectsCsv, downloadText } from '../lib/csv';
 import { count, php, phpDelta, plural } from '../lib/format';
 import { usePortal } from '../lib/portal-context';
 import { summarise, type ScopedProject, type ScopeResult, type Summary } from '../lib/scope';
+import { scrollToHash } from '../lib/scroll-to-hash';
 import { useTitle } from '../lib/use-title';
 
 const PAGE = 100;
@@ -53,8 +54,7 @@ function Projects({ scope, datasets }: { scope: ScopeResult; datasets: DatasetIn
 
   // #offices and #projects links land on their section once it has rendered.
   useEffect(() => {
-    if (!hash) return;
-    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: 'start' });
+    scrollToHash(hash);
   }, [hash, districts.status]);
 
   // The disclaimers of every response on this page: the project lists' and the districts'.
@@ -75,7 +75,8 @@ function Projects({ scope, datasets }: { scope: ScopeResult; datasets: DatasetIn
   const status = (params.get('status') ?? '') as BridgeGroup | '';
   const why = params.get('why') ?? '';
   const office = params.get('office') ?? '';
-  const sort = (params.get('sort') as Sort) in SORTS ? (params.get('sort') as Sort) : 'house';
+  const sortParam = params.get('sort') ?? '';
+  const sort: Sort = Object.hasOwn(SORTS, sortParam) ? sortParam as Sort : 'house';
   const [shown, setShown] = useState(PAGE);
 
   const setParam = (key: string, value: string) => {

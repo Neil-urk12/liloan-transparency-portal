@@ -17,6 +17,7 @@ import { count, php, phpFull, plural } from '../lib/format';
 import { departmentShort, gaaCsv, gaaYearTotals, hasYear, loadGaa, type GaaResult, type GaaRow } from '../lib/gaa';
 import { usePortal, type Async } from '../lib/portal-context';
 import { useTitle } from '../lib/use-title';
+import { scrollToHash } from '../lib/scroll-to-hash';
 
 const PAGE = 100;
 const FIRST = GAA_YEARS[0];
@@ -46,7 +47,7 @@ export default function Enacted() {
   // #office-… links from the main page land on the office once it has rendered.
   const { hash } = useLocation();
   useEffect(() => {
-    if (hash) document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: 'start' });
+    scrollToHash(hash);
   }, [hash, districts.status]);
 
   const placeList = places.map((p) => p.label).join(', ');

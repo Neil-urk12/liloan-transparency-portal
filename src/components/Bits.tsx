@@ -53,7 +53,7 @@ export function Disclaimers({ items, compact }: { items: Disclaimer[]; compact?:
 }
 
 /** Render `ready`, or a loading line, or the error with a retry. */
-export function Await<T>({ state, children, what }: { state: Async<T>; children: (value: T) => ReactNode; what: string }) {
+export function Await<T>({ state, children, what, onRetry }: { state: Async<T>; children: (value: T) => ReactNode; what: string; onRetry?: () => void }) {
   const { retry } = usePortal();
   if (state.status === 'ready') return <>{children(state.value)}</>;
   if (state.status === 'loading') {
@@ -68,7 +68,7 @@ export function Await<T>({ state, children, what }: { state: Async<T>; children:
       <p>
         <strong>Could not load {what}.</strong> {state.error.message}
       </p>
-      <button type="button" className="button" onClick={retry}>
+      <button type="button" className="button" onClick={onRetry ?? retry}>
         Try again
       </button>
     </div>

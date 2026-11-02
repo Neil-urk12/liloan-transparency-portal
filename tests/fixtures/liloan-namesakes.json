@@ -1,0 +1,426 @@
+{
+  "verified": "2026-11-02",
+  "sources": [
+    "https://budget.bettergov.ph/api/v1/hgab/2027/datasets/dpwh/projects?q=Liloan&limit=200",
+    "https://budget.bettergov.ph/api/v1/gaa/departments/18/programs?q=Liloan&limit=500",
+    "https://budget.bettergov.ph/api/v1/gaa/departments/05/programs?q=Liloan&limit=500"
+  ],
+  "project": {
+    "id": "house-reading:9232",
+    "dataset": "dpwh",
+    "title": "Concreting of Road, Barangay Liloan to Barangay Bunlan, Santander, Cebu",
+    "program": "Convergence and Special Support Program",
+    "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+    "region": "Region VII",
+    "region_key": "VII",
+    "office": "Cebu 2nd District Engineering Office",
+    "office_kind": "District engineering offices (DEOs)",
+    "zone": "local",
+    "trace": "amount_same",
+    "status_label": "Same amount in both",
+    "bridge_group": "unchanged",
+    "group_label": "Same amount in both",
+    "held": false,
+    "house_match": "exact_candidate",
+    "reading_status": "same_amount",
+    "api_presence": "paired",
+    "confidence": 1,
+    "nep_php": 5000000,
+    "hgab2_php": 5000000,
+    "hgab3_php": 5000000,
+    "house_php": 5000000,
+    "api_php": 5000000,
+    "delta_php": 0,
+    "nep_page": 534,
+    "hgab2_page": 584,
+    "hgab3_page": 584,
+    "nep_doc": "nep2027-vol-iib",
+    "hgab2_doc": "hb10858-2r-vol-ic",
+    "hgab3_doc": "hb10858-3r-vol-ic",
+    "pdf_url": {
+      "nep": "https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=534",
+      "hgab2": "https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-2r-vol-ic.pdf#page=584",
+      "hgab3": "https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=584"
+    },
+    "length_m": null,
+    "flags": [
+      "nep_evidence_review"
+    ],
+    "suggestions": 0,
+    "lon": null,
+    "lat": null,
+    "url": "https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A9232",
+    "api_url": "/api/v1/hgab/2027/datasets/dpwh/projects/house-reading%3A9232",
+    "key": "dpwh:house-reading:9232",
+    "reasons": [
+      {
+        "kind": "place",
+        "label": "Liloan"
+      }
+    ]
+  },
+  "localProject": {
+    "id": "house-reading:9297",
+    "dataset": "dpwh",
+    "title": "Construction of Road, Barangay Catarman, Liloan, Cebu",
+    "program": "Convergence and Special Support Program",
+    "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+    "region": "Region VII",
+    "region_key": "VII",
+    "office": "Cebu 5th District Engineering Office",
+    "office_kind": "District engineering offices (DEOs)",
+    "zone": "local",
+    "trace": "amount_same",
+    "status_label": "Same amount in both",
+    "bridge_group": "unchanged",
+    "group_label": "Same amount in both",
+    "held": false,
+    "house_match": "exact_candidate",
+    "reading_status": "same_amount",
+    "api_presence": "paired",
+    "confidence": 1,
+    "nep_php": 5000000,
+    "hgab2_php": 5000000,
+    "hgab3_php": 5000000,
+    "house_php": 5000000,
+    "api_php": 5000000,
+    "delta_php": 0,
+    "nep_page": 536,
+    "hgab2_page": 586,
+    "hgab3_page": 586,
+    "nep_doc": "nep2027-vol-iib",
+    "hgab2_doc": "hb10858-2r-vol-ic",
+    "hgab3_doc": "hb10858-3r-vol-ic",
+    "pdf_url": {
+      "nep": "https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=536",
+      "hgab2": "https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-2r-vol-ic.pdf#page=586",
+      "hgab3": "https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=586"
+    },
+    "length_m": null,
+    "flags": [
+      "nep_evidence_review"
+    ],
+    "suggestions": 0,
+    "lon": null,
+    "lat": null,
+    "url": "https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A9297",
+    "api_url": "/api/v1/hgab/2027/datasets/dpwh/projects/house-reading%3A9297",
+    "key": "dpwh:house-reading:9297",
+    "reasons": [
+      {
+        "kind": "place",
+        "label": "Liloan"
+      }
+    ]
+  },
+  "programs": [
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|liloansan ricardo circumferential road barangay looc san ricardo southern leyte sta 250430  sta 258130",
+      "name": "Liloan-San Ricardo Circumferential Road, Barangay Looc, San Ricardo, Southern Leyte (STA 25+043.0 - STA 25+813.0 )",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 85493000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of bridge along malinao river provincial road barangay malandayon to barangay liloan malinao aklan  sta 0  058  sta 0  0  0828 including road approaches  sta 0  000  sta 0  058 sta 0  0828  sta 0  1575 sta 0  000  sta 0  055",
+      "name": "Construction (Completion) of Bridge along Malinao River Provincial Road, Barangay Malandayon to Barangay Liloan, Malinao, Aklan - Sta. 0 + 058 - Sta. 0 + 0 + 082.8 including road approaches - Sta. 0 + 000 - Sta. 0 + 058, Sta. 0 + 082.8 - Sta. 0 + 157.5, Sta. 0 + 000 - Sta. 0 + 055  ",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 43707000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of brgypandanestelaguintoylansan isidro road liloan southern leyte  sta 0000  0848",
+      "name": "Construction of Brgy.Pandan-Estela-Guintoylan-San Isidro Road, Liloan, Southern Leyte - STA 0+000 - 0+848",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 24500000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of multipurpose building phase i barangay san roque liloan southern leyte 10156920 125135160",
+      "name": "Construction of Multi-Purpose Building, Phase I, Barangay San Roque, Liloan, Southern Leyte (10.156920°, 125.135160°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 16000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of multipurpose building barangay hall barangay liloan catarman camiguin 12467129391425455",
+      "name": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Liloan, Catarman, Camiguin (124.671293°,9.1425455°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 12000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of water supply system barangay himayangan liloan southern leyte",
+      "name": "Construction of Water Supply System, Barangay Himay-angan, Liloan, Southern Leyte",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 5000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|access road leading to ompas beach liloan maria siquijor sta 1360  sta 1579",
+      "name": "Access Road leading to Ompas Beach, Liloan, Maria, Siquijor, Sta. 1+360 - Sta. 1+579",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 4900000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of road barangay liloan santander cebu sta 0000  sta 0320",
+      "name": "Construction of Road, Barangay Liloan, Santander, Cebu, Sta 0+000 - Sta 0+320   ",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 4845000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay ilag liloan southern leyte 1020423 12509826",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Ilag, Liloan, Southern Leyte (10.20423°, 125.09826°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 4000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay magaupas liloan southern leyte 10226124 125080410",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Magaupas, Liloan, Southern Leyte (10.226124°, 125.080410°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 4000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay cagbungalon liloan southern leyte 1011176 12511799",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Cagbungalon, Liloan, Southern Leyte (10.11176°, 125.11799°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 3000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay caligangan liloan southern leyte 10125583 125201500",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Caligangan, Liloan, Southern Leyte (10.125583°, 125.201500°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 3000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay molopolo liloan southern leyte 10183057 125135217",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Molopolo, Liloan, Southern Leyte (10.183057°, 125.135217°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 3000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay pres roxas liloan southern leyte 1021020 12508973",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Pres. Roxas, Liloan, Southern Leyte (10.21020°, 125.08973°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 3000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay gudan liloan southern leyte 10130278 125117645",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Gud-an, Liloan, Southern Leyte (10.130278°, 125.117645°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 2000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay himayangan liloan southern leyte 10194104 125106403",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay Himay-angan, Liloan, Southern Leyte (10.194104°, 125.106403°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 2000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction completion of multipurpose building barangay san roque liloan southern leyte 101609 12512989",
+      "name": "Construction (Completion) of Multi-Purpose Building, Barangay San Roque, Liloan, Southern Leyte (10.1609°, 125.12989°)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 2000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of multipurpose building covered court barangay liloan santander cebu 9422582 123308405",
+      "name": "Construction of Multi-Purpose Building (Covered Court), Barangay Liloan, Santander, Cebu (9.422582, 123.308405)",
+      "ids_count": 1,
+      "years": {
+        "2026": {
+          "count": 1,
+          "amount": 2000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|concreting of jalaud nortebalud ibalud iibalud liloan barangay road zarraga iloilo",
+      "name": "Concreting of Jalaud Norte-Balud I-Balud II-Balud Liloan Barangay Road, Zarraga, Iloilo",
+      "ids_count": 1,
+      "years": {
+        "2020": {
+          "count": 1,
+          "amount": 15000000
+        },
+        "2021": {
+          "count": 1,
+          "amount": 11550000
+        }
+      }
+    },
+    {
+      "department_id": "05",
+      "agency_id": "05-001",
+      "fam_key": "05-001|concreting of purok 1 to sitio liloan brgy lumbo fmr brgy lumbo valencia city bukidnon",
+      "name": "Concreting of Purok 1 to Sitio Liloan, Brgy. Lumbo FMR, Brgy. Lumbo, Valencia City, Bukidnon",
+      "ids_count": 1,
+      "years": {
+        "2021": {
+          "count": 1,
+          "amount": 13000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|construction of multipurpose building brgy liloan bonifacio misamis occidental",
+      "name": "Construction of Multi-Purpose Building, Brgy. Liloan, Bonifacio, Misamis Occidental",
+      "ids_count": 1,
+      "years": {
+        "2021": {
+          "count": 1,
+          "amount": 3000000
+        }
+      }
+    },
+    {
+      "department_id": "18",
+      "agency_id": "18-001",
+      "fam_key": "18-001|concreting of tzu chi main road barangay liloan ormoc  leyte",
+      "name": "Concreting of Tzu Chi Main Road, Barangay Liloan, Ormoc , Leyte",
+      "ids_count": 1,
+      "years": {
+        "2020": {
+          "count": 1,
+          "amount": 4000000
+        }
+      }
+    }
+  ],
+  "localProgram": {
+    "department_id": "18",
+    "agency_id": "18-001",
+    "fam_key": "18-001|construction of public water supply system barangay cabadiangan liloan cebu",
+    "name": "Construction of Public Water Supply System, Barangay Cabadiangan, Liloan, Cebu  ",
+    "ids_count": 1,
+    "years": {
+      "2026": {
+        "count": 1,
+        "amount": 5000000
+      }
+    },
+    "key": "gaa:18-001|construction of public water supply system barangay cabadiangan liloan cebu",
+    "department": "Department of Public Works and Highways (DPWH)",
+    "reasons": [
+      "Liloan"
+    ]
+  }
+}

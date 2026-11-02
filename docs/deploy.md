@@ -52,3 +52,12 @@ canonical URL into `index.html`, so link previews show the right portal.
 The portal reads `https://budget.bettergov.ph` unless `api` is set in the config or
 `VITE_API_BASE` is set at build time. The API is CORS-open and edge-cached, so no proxy
 is needed.
+
+`npm run check` loads the same Vite `.env`, `.env.local`, `.env.production`, and
+`.env.production.local` files as the default build. Process environment variables
+take precedence. For a different mode, use the same mode for both commands:
+
+```bash
+npm run check -- --mode staging
+npm run build -- --mode staging
+```

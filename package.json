@@ -12,6 +12,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
+    "test": "tsx --test tests/client.test.ts tests/check.test.ts tests/scope.test.ts",
+    "test:browser": "tsx --test tests/browser.test.ts",
     "deploy:cloudflare": "npm run build && wrangler deploy",
     "build:poster": "tsx scripts/build-poster.ts"
   },
